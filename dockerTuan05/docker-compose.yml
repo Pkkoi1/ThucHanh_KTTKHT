@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_NAME: tuan05Docker1
+      WORDPRESS_DB_USER: Pham_Dang_Khoi@13
+      WORDPRESS_DB_PASSWORD: f$MUtLq4sUT5TG2YmX668QTt
+    depends_on:
+      - mysql
+    networks:
+      - wordpress_net
+    volumes:
+      - wordpress_data:/var/www/html
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: tuan05Docker1
+      MYSQL_USER: Pham_Dang_Khoi@13
+      MYSQL_PASSWORD: f$MUtLq4sUT5TG2YmX668QTt
+    networks:
+      - wordpress_net
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+networks:
+  wordpress_net:
+    driver: bridge
+
+volumes:
+  wordpress_data:
+  mysql_data:
