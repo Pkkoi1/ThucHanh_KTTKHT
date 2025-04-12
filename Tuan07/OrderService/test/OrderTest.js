@@ -3,14 +3,14 @@ const axios = require("axios");
 const OrderTest = async () => {
   try {
     const response = await axios.post("http://localhost:3002/api/orders", {
-      customerId: "67f4eb15096d387833e28248",
+      customerId: "67f9b931907ab53073dbc849",
       products: [
         {
-          productId: "67f4e4ffd73ea6cc76676eda",
+          productId: "67f9b9eef498851c6387c527",
           quantity: 1,
         },
         {
-          productId: "67f4e514d73ea6cc76676edd",
+          productId: "67f9ba1bf498851c6387c529",
           quantity: 2,
         },
       ],
