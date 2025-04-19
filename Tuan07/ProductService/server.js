@@ -21,6 +21,9 @@ db.once("open", () => {
 
 const productRoutes = require("./routes/ProductRoutes");
 app.use("/api/products", productRoutes);
+app.get("/health", (req, res) => {
+  res.json({ status: "OK" });
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
