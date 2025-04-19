@@ -22,8 +22,11 @@ db.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
-const orderRoutes = require("./routes/OrderRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 app.use("/api/orders", orderRoutes);
+app.get("/health", (req, res) => {
+  res.json({ status: "OK" });
+});
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {

@@ -6,7 +6,7 @@ const CustomerTest = async () => {
       name: "Pham Dang Khoi",
       address: "Phuong 4, Go Vap",
       phone: "0333319121",
-      email: "khoi1233@gmail.com",
+      email: "khoi12345@gmail.com",
     });
     console.log(response.data);
   } catch (error) {
